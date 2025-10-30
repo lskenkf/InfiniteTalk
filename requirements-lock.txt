@@ -1,6 +1,4 @@
-The issue is that your requirements-lock.txt file contains local conda build paths (like /home/conda/feedstock_root/build_artifacts/...) instead of regular PyPI package names. These paths don't exist in your environment.
-Let's create a cleaned-up requirements file with just the package names and versions:
-bashcat > requirements-clean.txt << 'EOF'
+
 accelerate==1.10.1
 addict==2.4.0
 aiofiles==24.1.0
