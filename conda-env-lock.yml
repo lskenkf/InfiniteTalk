@@ -3,74 +3,82 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - _libgcc_mutex=0.1=main
-  - ca-certificates=2025.9.9=h06a4308_0
-  - ld_impl_linux-64=2.40=h12ee557_0
-  - libgfortran5=13.2.0=ha4646dd_0
-  - libstdcxx-ng=13.2.0=hc0a3c3a_7
-  - tzdata=2025b=h04d1e81_0
-  - libgfortran-ng=13.2.0=h69a702a_0
-  - libgomp=11.2.0=h1234567_1
+  # Python interpreter
+  - python=3.10
+  - pip
+  
+  # System libraries (essential)
+  - _libgcc_mutex=0.1
   - _openmp_mutex=5.1=1_gnu
-  - libgcc-ng=11.2.0=h1234567_1
-  - aom=3.6.0=h6a678d5_0
-  - bzip2=1.0.8=h5eee18b_6
-  - dav1d=1.2.1=h5eee18b_0
-  - expat=2.7.1=h6a678d5_0
-  - fribidi=1.0.10=h36c2ea0_0
-  - gmp=6.2.1=h58526e2_0
-  - graphite2=1.3.14=h295c915_1
-  - icu=73.1=h6a678d5_0
-  - jpeg=9e=h166bdaf_1
-  - lame=3.100=h7f98852_1001
-  - lerc=4.0.0=h6a678d5_0
-  - libbrotlicommon=1.0.9=h166bdaf_7
-  - libdeflate=1.22=h5eee18b_0
-  - libffi=3.4.4=h6a678d5_1
-  - libiconv=1.17=h166bdaf_0
-  - libogg=1.3.4=h7f98852_1
-  - libopenblas=0.3.21=h043d6bf_0
-  - libopus=1.3.1=h7f98852_1
-  - libuuid=1.41.5=h5eee18b_0
-  - libvpx=1.11.0=h9c3ff4c_3
-  - libwebp-base=1.3.2=h5eee18b_1
-  - libzlib=1.3.1=hb25bd0a_0
-  - lz4-c=1.9.3=h9c3ff4c_1
-  - ncurses=6.5=h7934f7d_0
-  - nettle=3.6=he412f7d_0
-  - openh264=2.1.1=h4ff587b_0
-  - openssl=3.0.17=h5eee18b_0
-  - pixman=0.46.4=h7934f7d_0
-  - pthread-stubs=0.3=h0ce48e5_1
+  - libgcc-ng=11.2.0
+  - libgomp=11.2.0
+  - libstdcxx-ng=11.2.0
+  
+  # Core system dependencies
+  - ca-certificates
+  - openssl=3.0
+  - zlib
+  - bzip2
+  - xz
+  - libffi
+  - ncurses
+  - readline
+  - sqlite
+  
+  # Math and science libraries (conda versions work better)
+  - numpy
+  - scipy
+  - scikit-learn
+  - matplotlib-base
+  - pillow
+  
+  # Audio/Video processing
+  - ffmpeg
+  - libsndfile
+  - portaudio
+  
+  # Image processing
+  - jpeg
+  - libpng
+  - libtiff
+  - libwebp-base
+  
+  # Multimedia codecs
   - x264
-  - x265=3.5=h924138e_3
-  - xorg-libxau=1.0.12=h9b100fa_0
-  - xorg-libxdmcp=1.1.5=h9b100fa_0
-  - xorg-xorgproto=2024.1=h5eee18b_1
-  - xz=5.6.4=h5eee18b_1
-  - gettext=0.19.8.1=h73d1719_1008
-  - gnutls=3.6.13=h85f3911_1
-  - libavif=1.1.1=h5eee18b_0
-  - libblas=3.9.0=16_linux64_openblas
-  - libbrotlidec=1.0.9=h166bdaf_7
-  - libbrotlienc=1.0.9=h166bdaf_7
-  - libllvm11=11.1.0=hf817b99_3
-  - libvorbis=1.3.7=h9c3ff4c_0
-  - libxcb=1.17.0=h9b100fa_0
-  - readline=8.3=hc2a1206_0
-  - zlib=1.3.1=hb25bd0a_0
-  - zstd=1.5.2=h8a70e8d_1
-  - brotli-bin=1.0.9=h166bdaf_7
-  - libcblas=3.9.0=16_linux64_openblas
-  - libflac=1.3.4=h27087fc_0
-  - liblapack=3.9.0=16_linux64_openblas
-  - libpng=1.6.39=h5eee18b_0
-  - libtiff=4.7.0=hde9077f_0
-  - libxml2=2.13.8=hfdd30dd_0
-  - pcre2=10.42=hebb0a14_1
-  - sqlite=3.50.2=hb25bd0a_1
-  - xorg-libx11=1.8.12=h9b100fa_1
-  - brotli=1.0.9=h166bdaf_7
-  - freetype=2.13.3=h4a9f257_0
-  - lcms2=2.16=h92b89f2_1
-  - libglib
+  - x265
+  - aom
+  - dav1d
+  - libvpx
+  - lame
+  - libopus
+  - libogg
+  - libvorbis
+  - libflac
+  
+  # Graphics and fonts
+  - freetype
+  - fontconfig
+  - pixman
+  - expat
+  
+  # Compression
+  - lz4-c
+  - zstd
+  - brotli
+  
+  # ICU - allow flexibility for Qt dependencies
+  - icu>=73.1
+  
+  # Build tools
+  - cmake
+  - ninja
+  - pkg-config
+  
+  # CUDA support (if available)
+  - cudatoolkit=11.8
+  - cudnn
+  
+  # Development tools
+  - git
+  - curl
+  - wget
