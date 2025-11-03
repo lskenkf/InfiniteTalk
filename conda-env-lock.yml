@@ -1,4 +1,4 @@
-name: multitalk
+name: infiniteTalk
 channels:
   - conda-forge
   - defaults
